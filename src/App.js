@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 // import './App.css';
 import marked from 'marked/marked.min.js';
 
-// let marked = require('marked/marked.min.js');
-
 marked.setOptions({
   breaks: true,
 });
@@ -12,8 +10,6 @@ const renderer = new marked.Renderer();
 renderer.link = (href, title, content) => {
   return `<a target="_blank" href="${href}">${content}</a>`
 };
-
-// const placeholder = "Potato.";
 
 const placeholder = `
   # Aloha! Here's a heading for you.
@@ -59,7 +55,6 @@ const placeholder = `
   1. for some reason
 `;
 
-
 const Editor = (props) => {
   return (
     <textarea 
@@ -70,13 +65,13 @@ const Editor = (props) => {
       type="text" />
   )
 };
-  
+
 class Preview extends React.Component {
   
   renderMarkup() {
     return {__html: marked(this.props.userInput)}
   }
-  
+
   render() {
     return (
       <div id="preview" className="preview" dangerouslySetInnerHTML={this.renderMarkup()}></div>
@@ -105,7 +100,7 @@ class App extends React.Component {
         <Editor userInput={this.state.userInput} onChange={this.handleChange} />
         <div className="titleBar">Here's your preview:</div>
         <Preview userInput={this.state.userInput} />
-</div>
+      </div>
     )
   }
 };

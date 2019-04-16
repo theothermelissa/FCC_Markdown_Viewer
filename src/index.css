@@ -11,8 +11,8 @@ img {
   font-size: 3em;
   color: white;
   text-transform: uppercase;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: gainsboro;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: goldenrod;
   margin: 20px 0px 0px 0px;
 }
